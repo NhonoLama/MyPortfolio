@@ -136,7 +136,7 @@
 }
 
 @utility blob-container {
-  @apply w-72 h-72 overflow-hidden shadow-xl;
+  @apply md:w-72 md:h-72 w-48 h-48 overflow-hidden shadow-xl;
   animation: blob 8s ease-in-out infinite;
 }
 

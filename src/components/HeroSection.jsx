@@ -5,9 +5,9 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex felx-col items-center justify-center px-4"
+      className="relative min-h-screen flex items-center justify-center px-4"
     >
-      <div className="flex justify-between container max-w-6xl mx-auto text-center z-10">
+      <div className="flex flex-col-reverse gap-10 lg:flex-row justify-between container max-w-6xl mx-auto text-center z-10">
         <div className="space-y-6 my-auto">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             <span className="opacity-0 animate-fade-in">Hi! I'm</span>
@@ -30,12 +30,12 @@ const HeroSection = () => {
             </a>
           </div>
         </div>
-        <div className="justify-center items-center">
+        <div className="mx-auto items-center">
           <div className="blob-container">
             <img
               src="/photo.jpg"
               alt="Profile"
-              className="w-72 h-72 object-cover"
+              className="w-48 h-48 md:w-72 md:h-72 object-cover"
             />
           </div>
         </div>
