@@ -33,7 +33,7 @@ const HeroSection = () => {
         <div className="justify-center items-center">
           <div className="blob-container">
             <img
-              src="./public/photo.jpg"
+              src="/photo.jpg"
               alt="Profile"
               className="w-72 h-72 object-cover"
             />
