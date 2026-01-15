@@ -1,21 +1,83 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNestjs,
+} from "react-icons/si";
+import {
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+} from "react-icons/si";
+import { SiGit, SiDocker } from "react-icons/si";
+
 const skills = [
-  //frontend
-  { name: "HTML/CSS", level: 95, category: "Frontend" },
-  { name: "Javascript", level: 90, category: "Frontend" },
-  { name: "React", level: 90, category: "Frontend" },
-  { name: "TailwindCSS", level: 80, category: "Frontend" },
-  //backend
-  { name: "Node.js", level: 70, category: "Backend" },
-  { name: "Express", level: 70, category: "Backend" },
-  { name: "MongoDB", level: 80, category: "Backend" },
-  { name: "PostgreSQL", level: 80, category: "Backend" },
-  //tools
-  { name: "Git/GitHub", level: 90, category: "Tools" },
-  { name: "Docker", level: 70, category: "Tools" },
+  {
+    name: "JavaScript",
+    category: "Frontend",
+    icon: <SiJavascript className="w-8 h-8 text-yellow-400" />,
+  },
+  {
+    name: "React.js",
+    category: "Frontend",
+    icon: <SiReact className="w-8 h-8 text-blue-400" />,
+  },
+  {
+    name: "Next.js",
+    category: "Frontend",
+    icon: <SiNextdotjs className="w-8 h-8 text-black-400" />,
+  },
+  {
+    name: "Tailwind",
+    category: "Frontend",
+    icon: <SiTailwindcss className="w-8 h-8 text-teal-400" />,
+  },
+
+  {
+    name: "Node.js",
+    category: "Backend",
+    icon: <SiNodedotjs className="w-8 h-8 text-green-500" />,
+  },
+  {
+    name: "Nest.js",
+    category: "Backend",
+    icon: <SiNestjs className="w-8 h-8 text-red-500" />,
+  },
+  {
+    name: "Express",
+    category: "Backend",
+    icon: <SiExpress className="w-8 h-8 text-gray-600" />,
+  },
+  {
+    name: "MongoDB",
+    category: "Backend",
+    icon: <SiMongodb className="w-8 h-8 text-green-600" />,
+  },
+  {
+    name: "PostgreSQL",
+    category: "Backend",
+    icon: <SiPostgresql className="w-8 h-8 text-blue-700" />,
+  },
+
+  {
+    name: "Git/GitHub",
+    category: "Tools",
+    icon: <SiGit className="w-8 h-8 text-red-500" />,
+  },
+  {
+    name: "Docker",
+    category: "Tools",
+    icon: <SiDocker className="w-8 h-8 text-blue-500" />,
+  },
 ];
+
 const categories = ["all", "Frontend", "Backend", "Tools"];
 
 const SkillsSection = () => {
@@ -24,13 +86,16 @@ const SkillsSection = () => {
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory
   );
+
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           My <span className="text-primary">Skills</span>
         </h2>
-        <div className="flex -flex-wrap justify-center gap-4 mb-12">
+
+        {/* Category buttons */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category, key) => (
             <button
               key={key}
@@ -46,26 +111,19 @@ const SkillsSection = () => {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {/* Skills icons */}
+        <div className="flex flex-wrap justify-center gap-6">
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
+              className="w-20 h-20 flex items-center justify-center rounded-xl bg-card shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-1 hover:scale-105 cursor-pointer relative group"
             >
-              <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg">{skill.name}</h3>
-              </div>
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out}"
-                  style={{ width: skill.level + "%" }}
-                />
-              </div>
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level + "%"}
-                </span>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity " />
+              {skill.icon}
+              <span className="absolute bottom-1 text-xs text-foreground/80  text-center opacity-0 group-hover:opacity-100 transition-opacity">
+                {skill.name}
+              </span>
             </div>
           ))}
         </div>

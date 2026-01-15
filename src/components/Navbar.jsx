@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
@@ -32,9 +32,8 @@ const Navbar = () => {
           href="#hero"
           className="text-xl font-bold text-primary flex items-center "
         >
-          <span className="relative z-10">
-            <span className="text-glow text-foreground">Dawa Lama's</span>{" "}
-            Portfolio
+          <span className="relative z-10 ">
+            <span className="text-glow text-foreground">Dawa Dev</span>{" "}
           </span>
         </a>
 

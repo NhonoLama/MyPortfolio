@@ -7,8 +7,8 @@ const HeroSection = () => {
       id="hero"
       className="relative min-h-screen flex felx-col items-center justify-center px-4"
     >
-      <div className="container max-w-4xl mx-auto text-center z-10">
-        <div className="space-y-6">
+      <div className="flex justify-between container max-w-6xl mx-auto text-center z-10">
+        <div className="space-y-6 my-auto">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             <span className="opacity-0 animate-fade-in">Hi! I'm</span>
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
@@ -21,13 +21,22 @@ const HeroSection = () => {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            Aspiring Full Stack Developer | Proficient with React, Node.js &
-            REST APIs | BSC.CSIT Candidate
+            Full Stack Developer | Proficient with React, Next.js, Nest.js,
+            Node.js & REST APIs | BSC.CSIT Candidate
           </p>
           <div className="opacity-0 animate-fade-in-delay-4 pt-4">
             <a href="#projects" className="cosmic-button">
               View My Work
             </a>
+          </div>
+        </div>
+        <div className="justify-center items-center">
+          <div className="blob-container">
+            <img
+              src="./public/photo.jpg"
+              alt="Profile"
+              className="w-72 h-72 object-cover"
+            />
           </div>
         </div>
       </div>
